@@ -1,4 +1,4 @@
-# This code is used to downscale PNratio.nc from 0.5 degree to 0.05 degree
+# This code is used to resample PNratio.nc from 0.5 degree to 0.05 degree
 
 import xarray as xr
 import numpy as np
