@@ -3,9 +3,8 @@
 import shutil
 import os
 
-source_folder = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/P_Manure_Input'
+source_folder = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/N_Manure_Input'
 destination_folder = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/Manure_NP_Input'
-
 
 # Loop over all .nc files in the source folder
 for nc_file in os.listdir(source_folder):
@@ -17,7 +16,7 @@ for nc_file in os.listdir(source_folder):
         file_parts = nc_file.split('_')
         
         # Modify the file name as needed (for example, add a prefix or suffix)
-        new_file_name = 'Manure_NP_1960-2020_' + file_parts[3]
+        new_file_name = 'Manure_NP_1961-2020_' + file_parts[3]
         destination_path = os.path.join(destination_folder, new_file_name)
         
         # Copy the file to the destination folder with the new name

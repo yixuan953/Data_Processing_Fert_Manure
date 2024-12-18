@@ -1,4 +1,5 @@
 # This code is used to: Calculate P manure input based on N manure input and PN ratio
+# P_manure input would be added to N_Manure_Input.nc files after running this code
 
 import xarray as xr
 import netCDF4 as nc
@@ -17,10 +18,9 @@ PNratio_broadcasted = np.expand_dims(PNratio_transposed, axis=0)  # Add time dim
 PNratio_broadcasted = np.repeat(PNratio_broadcasted, 60, axis=0)  # Repeat along time dimension
 PNratio_data.close()
 
-
 # Path for all the manure N input .nc file
-folder_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/P_Manure_Input'
-nc_files = glob.glob(os.path.join(folder_path, '*.nc') )                          
+folder_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/N_Manure_Input'
+nc_files = glob.glob(os.path.join(folder_path, '*.nc'))                          
                      
 for nc_file_name in nc_files:
     
@@ -41,7 +41,7 @@ for nc_file_name in nc_files:
          
          # Add N manure
          new_var1 = nc_file.createVariable(var_name1, 'f4', ('time', 'lon', 'lat'))
-         new_var1[:] = N_manure  # Use slicing to assign the data
+         new_var1[:] = N_manure 
          new_var1.setncattr('description', 'Annual total manure nitrogen input')
          new_var1.setncattr('units', 'kg/ha harvest area')         
          
@@ -49,9 +49,6 @@ for nc_file_name in nc_files:
          new_var2 = nc_file.createVariable(var_name2, 'f4', ('time', 'lon', 'lat'))
          new_var2[:] = P_manure  # Use slicing to assign the data    
          new_var2.setncattr('description', 'Annual total manure phosphorus input')
-         new_var2.setncattr('units', 'kg/ha harvest area')   
-         
+         new_var2.setncattr('units', 'kg/ha harvest area')      
 
     print(f"P manure of {nc_file_name} has been calculated and added")           
-         
-         

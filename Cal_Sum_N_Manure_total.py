@@ -9,7 +9,6 @@ import numpy as np
 
 # Path for all the manure N input .nc file
 folder_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/N_Manure_Input_Original'
-# folder_path = 'C:/Users/zhou111/Desktop'
 nc_files = glob.glob(os.path.join(folder_path, '*.nc'))
 
 for nc_file_name in nc_files:    
@@ -31,7 +30,7 @@ for nc_file_name in nc_files:
             
         if 'N_manure_Total' not in nc_file.variables:   
             nc_file.createVariable('N_manure_Total', var1.dtype, summed_var_dim)        
-            
+
         nc_file.variables['N_manure_Total'][:] = summed_var
     
     print(f"Summed variable added and saved to: {nc_file_name}")

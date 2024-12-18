@@ -3,14 +3,11 @@
 import h5py
 import xarray as xr
 import numpy as np
-import netCDF4
-from netCDF4 import Dataset
 import os
 import glob
 
 folder_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Fertilization'
-output_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Fertilization/Processed_data'
-#output_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Fertilization/Processed_data'
+output_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Fertilization/Processed_data/N_Manure_Input_Original'
 h5_files = glob.glob(os.path.join(folder_path, '*.h5'))
 
 for h5_file_name in h5_files:
@@ -23,7 +20,7 @@ for h5_file_name in h5_files:
     
     # Coordinates
     coords = {
-        'year': np.arange(1960, 2020),  # Years 1960-2019
+        'year': np.arange(1961, 2021),  # Years 1961-2020
         'lon': np.linspace(-180, 180, 4320),  # Longitude
         'lat': np.linspace(90, -90, 2160),   # Latitude
     }
@@ -52,5 +49,5 @@ for h5_file_name in h5_files:
         
     print(f"Renamed {h5_file_name} to {nc_file_name}")
     
-        # Close the .h5 file
+    # Close the .h5 file
     h5file.close()
