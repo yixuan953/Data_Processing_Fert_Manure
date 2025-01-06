@@ -1,7 +1,8 @@
-# This code is used to: Sum up the MA_deep and MA_surface --> Manure N
+# This code is used to: 
+# 1. Sum up the MA_deep and MA_surface --> Manure N
+# 2. Upscale the total manure input from 10 km to 0.5 degree
 
 import xarray as xr
-import netCDF4
 from netCDF4 import Dataset
 import os
 import glob
@@ -26,7 +27,8 @@ for nc_file_name in nc_files:
 
         summed_var_data = var1_data + var2_data
         summed_var_dim = nc_file.variables['N_manure_surface'].dimensions  # Use same dimensions
-        summed_var = xr.DataArray(summed_var_data, name="N_manure_Total")
+        summed_var_no_nan = xr.DataArray(summed_var_data, name="N_manure_Total")
+        summed_var = np.where(summed_var_no_nan == 0, np.nan, summed_var_data)
             
         if 'N_manure_Total' not in nc_file.variables:   
             nc_file.createVariable('N_manure_Total', var1.dtype, summed_var_dim)        
