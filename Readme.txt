@@ -2,7 +2,7 @@
 The code of this folder is used to calculate global N and P manure input
 1. Format_Trans_h52nc.py: Extract manure data from .h5 files and transform into .nc formats
 2. Cal_Sum_N_Manure_total.py: Sum up the total N manure input (MA_surface + MA_deep) for each crop (.nc files)
-3. Res_Trans_Downscale.py: Downscale N manure from 5 arc minute to 0.5 degree
+3. Res_Trans_N_manure_Upscale05d.py: Upscale N manure from 5 arc minute to 0.5 degree
    3.1 Read the harvest area for each crop and save to .nc file [kg/ha harvest area]
    3.2 Sum up the total harvest area to 0.5 degree resolution [kg/ha harvest area]
    3.3 Calculate the total amount of manure input [kg] for each pixel at 5 arc minute (harvest area * N fertilization rate)
