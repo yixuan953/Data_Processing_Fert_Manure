@@ -1,6 +1,6 @@
-# This code is used to: 
-# 1. Sum up the MA_deep and MA_surface --> Manure N
-# 2. Upscale the total manure input from 10 km to 0.5 degree
+# This code is used to: Sum up the MA_deep and MA_surface --> Manure N
+# 1. MA_deep: when tillage is applied 
+# 2. MA_surface: when tilalge is not applied
 
 import xarray as xr
 from netCDF4 import Dataset
