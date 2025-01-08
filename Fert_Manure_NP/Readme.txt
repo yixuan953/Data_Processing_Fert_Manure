@@ -41,7 +41,7 @@ Data source: Potter et al. (2010) https://cmr.earthdata.nasa.gov/search/concepts
 [Harvest area] 
 Unit: ha
 Variable: ['Barley', 'Cassava', 'Cotton', 'Fruits', 'Groundnut', 'Maize', 'Millet', 'Oilpalm', 'Others crops', 'Potato', 'Rapeseed', 'Rice', 'Rye', 'Sorghum', 'Soybean', 'Sugarbeet', 'Sugarcane', 'Sweetpotato', 'Vegetables', 'Wheat', 'sunflower']
-Temporal scale: Annual
+Temporal scale: Annual, 1961 - 2020
 Spatial scale: 5 arc minute
 Data format: .h5
 Data source: Adalibieke, W., Cui, X., Cai, H., You, L., Zhou, F. (2023). Global crop-specific nitrogen fertilization dataset in 1961-2020. National Tibetan Plateau / Third Pole Environment Data Center. https://doi.org/10.11888/Terre.tpdc.300446. https://cstr.cn/18406.11.Terre.tpdc.300446.
