@@ -4,7 +4,7 @@ import numpy as np
 import os
 import xarray as xr
 
-# %% 1. Calculate the total amount of inorganic input for each pixel at 0.5 degree resolution (harvest area * N fertilization rate)
+# %% 1. Calculate the total amount of inorganic input for each pixel at 5 arcmin (harvest area * N fertilization rate)
 
 # Output path:
 N_inorg_5arcm_path = 'C:/Users/zhou111/OneDrive - Wageningen University & Research/2_Data/NP_Input/Processed_data/N_Inorg_amount_5arcm'

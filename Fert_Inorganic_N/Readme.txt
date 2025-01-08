@@ -4,4 +4,6 @@ The code of this folder is used to calculate global inorganic N input
 2. Res_Trans_N_Inorganic_Upscale05d.py: Upscale N inorganic input from 5 arc minute to 0.5 degree
    2.1 Calculate the urea N input, other inorganic N input, and total inorganic N input (Urea + Other) [kg] for each pixel at 5 arc minute (harvest area * N fertilization rate)
    2.2 Sum up the urea N input, other inorganic N input, and total inorganic N input (Urea + Other) [kg] to 0.5 degree resolution
-   2.3 Divide the N inorganic input amount at 0.5 degree resolution by harvest area at each pixel [kg/ha harvest area]
+   2.3 Divide the N inorganic input amount at 0.5 degree resolution by harvest area at each pixel [kg N/ha harvest area]
+
+The data sources are as same as those used for Fert_Manure_NP calculations.
